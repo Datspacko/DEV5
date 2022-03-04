@@ -22,7 +22,7 @@ while zeitstempel <= 1632434400:
     pfadServer = f'http://archive.sensor.community/{datum}/{datum}_sds011_sensor_3659.csv' # Server-URL
     pfadLokal = f'sds011/{datum}_sds011_sensor_3659.csv'  # Dateiname festlegen
     request.urlretrieve(pfadServer, pfadLokal)  # Download durchführen
-    time.sleep(1)
+    #time.sleep(1)
     pfadServer = f'http://archive.sensor.community/{datum}/{datum}_dht22_sensor_3660.csv'
     pfadLokal = f'dht22/{datum}_dht22_sensor_3660.csv'
     request.urlretrieve(pfadServer, pfadLokal)
@@ -30,5 +30,5 @@ while zeitstempel <= 1632434400:
     zeitstempel += 86400  # Zeitstempel um 1 Tag erhöhen
 
     counter += 1
-    if counter % 25 == 0:  # nach 25 Durchgängen 3sec Pause
-        time.sleep(3)
+    #if counter % 25 == 0:  # nach 25 Durchgängen 3sec Pause
+    #    time.sleep(3)
