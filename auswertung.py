@@ -1,6 +1,5 @@
 import sqlite3
 import time
-from unittest import result
 
 jahr = input("Jahr eingeben: ")
 monat = input("Monat eingeben: ")
@@ -26,15 +25,15 @@ SELECT MIN(P1),AVG(P1),MAX(P1),
   FROM sds011
  WHERE timestamp LIKE '{datum}%'
 """
-print("Query1: " + q1)
-print("Query2: " + q2)
-time.sleep(10)
+
+# print("Query1: " + q1)
+# print("Query2: " + q2)
+# time.sleep(10)
 
 con = sqlite3.connect(dbname)
 c = con.cursor()
 c.execute(q1)
-c.execute(q2)
-
 results = c.fetchall()
-out = str(results)
-print(out)
+out = str(results[0])
+x1 = out.split(",")
+print(x1[1])
