@@ -15,8 +15,28 @@ datum = datetime.fromtimestamp(zeitstempel).strftime('%Y-%m-%d')
 
 conn = sqlite3.connect("feinstaubstation_2.db")
 c = conn.cursor()
-c.execute("""CREATE TABLE IF NOT EXISTS sds011(sensor_ID int, sensor_type varchar(5), location int, lat decimal(5,3), lon decimal(5,3), timestamp varchar(20), P1 decimal(4,2), durP1 decimal(4,2), ratioP1 decimal(4,2), P2 decimal(4,2), durP2 decimal(4,2), ratioP2 decimal(4,2))""")
-c.execute("""CREATE TABLE IF NOT EXISTS dht22 (sensor_ID int, sensor_type varchar(5), location int, lat decimal(5,3), lon decimal(5,3), timestamp varchar(20), temperature decimal(4,2), humidity decimal(4,2))""")
+c.execute("""CREATE TABLE IF NOT EXISTS sds011(
+                sensor_ID int, 
+                sensor_type varchar(5), 
+                location int, 
+                lat decimal(5,3), 
+                lon decimal(5,3), 
+                timestamp varchar(20), 
+                P1 decimal(4,2), 
+                durP1 decimal(4,2), 
+                ratioP1 decimal(4,2), 
+                P2 decimal(4,2), 
+                durP2 decimal(4,2), 
+                ratioP2 decimal(4,2))""")
+c.execute("""CREATE TABLE IF NOT EXISTS dht22 (
+                sensor_ID int, 
+                sensor_type varchar(5), 
+                location int, 
+                lat decimal(5,3), 
+                lon decimal(5,3), 
+                timestamp varchar(20), 
+                temperature decimal(4,2), 
+                humidity decimal(4,2))""")
 
 while zeitstempel <= 1632434400:
     datum = datetime.fromtimestamp(zeitstempel).strftime('%Y-%m-%d')
